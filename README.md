@@ -11,30 +11,30 @@ tables and figure files.
 
 ## The analyses
 
-Three hundred rice accessions were split into **two genetically disjoint panels** — Set 1
-(150 accessions, whole-genome-sequenced) and Set 2 (147 accessions, 50K array) — that share
-no accessions and were genotyped on different platforms. The pipeline builds a layered
+Three hundred rice accessions were split into **two genetically disjoint panels**: Set 1
+(150 accessions, whole-genome-sequenced) and Set 2 (147 accessions, 50K array). The panels
+share no accessions and were genotyped on different platforms. The pipeline builds a layered
 population-genomic portrait:
 
-- **Structure** — PCA, sNMF admixture (K-scan), UMAP, DAPC, cross-method consensus
+- **Structure**: PCA, sNMF admixture (K-scan), UMAP, DAPC, cross-method consensus
   (ARI/NMI), bootstrap-supported NJ trees, Patterson f3 admixture tests, anchored to the
   3,000 Rice Genomes reference (XI/GJ/cA/cB subpopulations).
-- **Diversity & mating system** — He/Ho/Fis, selfing rate, rarefied allelic richness,
+- **Diversity & mating system**: He/Ho/Fis, selfing rate, rarefied allelic richness,
   private alleles, π/θ_W/Tajima's D on a no-MAF-filter site set (the MAF-filter artifact
   is documented).
-- **Genome history** — ROH/F_ROH (with a residually heterozygous group isolated), LD-based
+- **Genome history**: ROH/F_ROH (with a residually heterozygous group isolated), LD-based
   Ne (selfing-adjusted), folded SFS + Stairway Plot demography (Set 1).
-- **Differentiation & selection** — Weir–Cockerham θ with block-bootstrap CIs, Nei Gst,
+- **Differentiation & selection**: Weir–Cockerham θ with block-bootstrap CIs, Nei Gst,
   one- and two-level AMOVA, LD decay, pcadapt + phased iHS/XP-EHH scans with
   convergence-based interpretation.
-- **Genomic↔phenomic concordance** — does image-based phenomics (204 canopy features)
+- **Genomic↔phenomic concordance**: does image-based phenomics (204 canopy features)
   recover the genetic population structure? Mantel/partial Mantel, Procrustes/PROTEST,
   supervised classification vs permutation nulls, MMRR, feature-family attribution,
   size-leakage and residualisation tests.
-- **Breeding resource** — the narrow base quantified in Ne units, plus a
+- **Breeding resource**: the narrow base quantified in Ne units, plus a
   diversity-maximising core collection.
 
-Framing rule used throughout: the two panels are disjoint and on different platforms —
+Framing rule used throughout: the two panels are disjoint and on different platforms;
 each is analysed separately and the results compared; only the 3K-RGP-common-SNP
 co-analysis merges data (with stated caveats). They are never presented as "one
 300-accession panel on two platforms."
@@ -77,5 +77,5 @@ bash run_all.sh          # regenerate every figure/table from the inputs
 
 ## Citation and license
 
-Please cite the associated paper (details on publication) and this archive — see
+Please cite the associated paper (details on publication) and this archive; see
 `CITATION.cff`. Code is released under the MIT License.
