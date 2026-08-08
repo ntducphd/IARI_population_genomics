@@ -1,0 +1,4 @@
+panel,feature_group,n_features,r_genomic,p
+Set1,Size_morphology,111,0.1587,0.001
+Set1,Colour,81,0.1262,0.001
+Set1,NIR,12,0.091,0.001

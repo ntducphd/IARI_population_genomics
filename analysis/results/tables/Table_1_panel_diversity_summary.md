@@ -1,0 +1,6 @@
+**Table 1. Panel summary, admixture K-selection, genetic diversity (missingness-only-filtered SNPs; SFS-shape statistics for Set 2 are ascertainment-biased and platform-relative), genomic inbreeding (F_ROH), and estimated selfing rate.**
+
+| Panel   | Platform   |   n |   SNPs (QC) |   SNPs (pruned) |   K (elbow) |   K (global-min) |   Mean PIC |   Mean Ho |   Mean He |   Mean F |   SNPs (missingness-only) |   Genome pi (no-MAF) |   Genome theta_W (no-MAF) |   Tajima's D (no-MAF) |   Mean F_ROH |   Selfing rate s |
+|:--------|:-----------|----:|------------:|----------------:|------------:|-----------------:|-----------:|----------:|----------:|---------:|--------------------------:|---------------------:|--------------------------:|----------------------:|-------------:|-----------------:|
+| Set1    | WGS 1.01M  | 150 |      502675 |           24370 |           7 |                9 |     0.2568 |    0.0233 |    0.3152 |   0.9256 |                    880050 |            0.0004587 |                 0.0003377 |                 1.138 |       0.8144 |           0.9614 |
+| Set2    | 50K array  | 147 |       31565 |            2942 |           9 |               11 |     0.2561 |    0.0671 |    0.3145 |   0.7866 |                     47305 |            3.246e-05 |                 1.984e-05 |                 1.983 |       0.6734 |           0.8806 |

@@ -1,0 +1,3 @@
+panel,thinned,n_snps_used,n_pairs_total,r2_at_shortest_bin,half_decay_bp
+Set1,True,50133,7272151,0.2131,562500
+Set2,False,31565,3857851,0.425,212500

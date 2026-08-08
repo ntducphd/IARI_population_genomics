@@ -1,0 +1,2 @@
+panel,n,n_clusters,n_splits,cv_accuracy,majority_baseline
+Set1,146,7,2,0.4521,0.226

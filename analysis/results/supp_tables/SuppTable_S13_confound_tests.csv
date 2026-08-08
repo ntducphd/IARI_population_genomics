@@ -1,0 +1,13 @@
+panel,test,r,p
+Set1,genomic~phenomic (primary),0.1596758693810435,0.001
+Set1,genomic~height_only,0.1455958985815484,0.001
+Set1,genomic~phenomic | size_family,0.0348822749568041,0.021
+Set1,genomic~nonsize | size_family,0.0387929096894231,0.007
+Set1,genomic~size_family,0.1586748433310576,0.001
+Set2,genomic~phenomic (primary),0.0866708005805823,0.003
+Set2,genomic~height_only,0.0829659749389863,0.001
+Set2,genomic~phenomic | size_family,-0.0277112934049996,0.863
+Set2,genomic~nonsize | size_family,-0.0246591288016597,0.804
+Set2,genomic~size_family,0.1396304151483627,0.001
+Set1,PlantID not numeric,,
+Set2,PlantID not numeric,,

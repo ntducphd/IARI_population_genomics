@@ -1,0 +1,5 @@
+panel,n,k_used,method_a,method_b,ARI,NMI
+Set1,150,7,PCA_kmeans_k3,admixture_argmaxQ,0.4361,0.6637
+Set1,150,7,PCA_kmeans_k7,admixture_argmaxQ,0.7176,0.8592
+Set1,150,7,UMAP_kmeans_k7,admixture_argmaxQ,0.7564,0.8383
+Set1,150,7,PCA_kmeans_k7,UMAP_kmeans_k7,0.5997,0.8114

@@ -1,0 +1,6 @@
+n_pc,m2,p_perm,inputs
+2,0.9513034170001061,0.01,stage09_pipeline (SNPRelate PCs x sklearn feature PCA)
+3,0.8187082165017139,0.005,stage09_pipeline (SNPRelate PCs x sklearn feature PCA)
+4,0.8047227155008337,0.005,stage09_pipeline (SNPRelate PCs x sklearn feature PCA)
+5,0.8384335830673026,0.005,stage09_pipeline (SNPRelate PCs x sklearn feature PCA)
+6,0.8345937611383838,0.005,stage09_pipeline (SNPRelate PCs x sklearn feature PCA)

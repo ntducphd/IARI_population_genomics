@@ -1,0 +1,35 @@
+panel,test,p,bh_q,significant_q05
+Set1,genomic~phenomic,0.001,0.0017894736842105265,True
+Set1,genomic~trait,0.001,0.0017894736842105265,True
+Set1,phenomic~trait,0.001,0.0017894736842105265,True
+Set1,genomic~phenomic|trait(partial),0.001,0.0017894736842105265,True
+Set1,family:Size_morphology,0.001,0.0017894736842105265,True
+Set1,family:Colour,0.001,0.0017894736842105265,True
+Set1,family:NIR,0.001,0.0017894736842105265,True
+Set2,genomic~trait,0.001,0.0017894736842105265,True
+Set2,family:NIR,0.001,0.0017894736842105265,True
+Set2,family:Size_morphology,0.001,0.0017894736842105265,True
+Set1,confound:genomic~size_family,0.001,0.0017894736842105265,True
+Set1,confound:genomic~height_only,0.001,0.0017894736842105265,True
+Set1,confound:genomic~phenomic (primary),0.001,0.0017894736842105265,True
+Set1,genomic~phenomic_day83,0.001,0.0017894736842105265,True
+Set1,genomic~phenomic_day75,0.001,0.0017894736842105265,True
+Set1,genomic~phenomic_day68,0.001,0.0017894736842105265,True
+Set2,confound:genomic~height_only,0.001,0.0017894736842105265,True
+Set1,phenomic~trait|genomic(partial),0.001,0.0017894736842105265,True
+Set2,confound:genomic~size_family,0.001,0.0017894736842105265,True
+Set2,genomic~phenomic_day75,0.002,0.0032380952380952383,True
+Set2,genomic~trait|phenomic(partial),0.002,0.0032380952380952383,True
+Set2,confound:genomic~phenomic (primary),0.003,0.004434782608695653,True
+Set2,genomic~phenomic_day68,0.003,0.004434782608695653,True
+Set2,genomic~phenomic,0.004,0.005666666666666667,True
+Set1,confound:genomic~nonsize | size_family,0.007,0.00952,True
+Set2,genomic~phenomic|trait(partial),0.012,0.015692307692307693,True
+Set2,phenomic~trait,0.014,0.017,True
+Set2,genomic~phenomic_day83,0.014,0.017,True
+Set2,phenomic~trait|genomic(partial),0.02,0.023448275862068966,True
+Set1,confound:genomic~phenomic | size_family,0.021,0.0238,True
+Set1,genomic~trait|phenomic(partial),0.135,0.14806451612903226,False
+Set2,family:Colour,0.348,0.36974999999999997,False
+Set2,confound:genomic~nonsize | size_family,0.804,0.8283636363636364,False
+Set2,confound:genomic~phenomic | size_family,0.863,0.863,False

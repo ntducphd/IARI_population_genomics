@@ -1,0 +1,12 @@
+panel,features,target,accuracy,cv_folds,empirical_p,null_mean,softQ_weighted_accuracy,n,n_groups
+Set1,full_204,admixture_elbowK,0.4520547945205479,2,0.001,0.1888395244559628,0.4687599327146365,,
+Set1,height_only,admixture_elbowK,0.2602739726027397,2,,,,,
+Set1,nonsize_colour_nir,admixture_elbowK,0.4178082191780822,2,,,,,
+Set1,full_204,kmeans_K6,0.4794520547945205,5,,,,,
+Set1,full_204,kmeans_K8,0.4794520547945205,5,,,,,
+Set2,full_204,admixture_elbowK,0.2993197278911564,5,0.001,0.1496598639455782,0.3240600835816999,,
+Set2,height_only,admixture_elbowK,0.2176870748299319,5,,,,,
+Set2,nonsize_colour_nir,admixture_elbowK,0.3265306122448979,5,,,,,
+Set2,full_204,kmeans_K8,0.3809523809523809,5,,,,,
+Set2,full_204,kmeans_K10,0.2993197278911564,5,,,,,
+Set1,,external_3KRGP_subpop,0.5891472868217055,5,0.001,0.3409688758525968,,129.0,5.0

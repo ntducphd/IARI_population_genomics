@@ -1,0 +1,6 @@
+panel,test,r,p
+Set1,genomic~phenomic (primary),0.1596758693810435,0.001
+Set1,genomic~height_only,0.14559589858154848,0.001
+Set1,genomic~phenomic | size_family,0.03488227495680417,0.021
+Set1,genomic~nonsize | size_family,0.038792909689423165,0.007
+Set1,genomic~size_family,0.15867484333105764,0.001

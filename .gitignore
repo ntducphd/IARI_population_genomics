@@ -1,0 +1,40 @@
+# Public repo scope: analysis code + figures +
+# result tables ONLY. No raw/interim data, no manuscript, no submission/deposit material.
+# regenerable intermediates (1.7 GB PLINK/GDS/VCF/LEA projects, phased VCFs, Stairway workdir)
+analysis/data/
+# private working material never ships
+.review/
+internal/
+Dhandapani_*/
+# manuscript, submission, and deposit material stay out of the public compendium
+manuscript/
+submission_package/
+zenodo_prep/
+cover_letter*.md
+# environment/build litter
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+# third-party binaries fetched by stage scripts
+analysis/tools/*.jar
+analysis/tools/*.zip
+analysis/tools/stairway_plot_v2.1.2/
+# local orphans pending author decision (tracked once integrated)
+Smart breeding Platform.jpg
+
+# process/tooling artifacts (gate reports, renumber maps, status/QC markers) — working files,
+# not scientific result tables; never ship in the public compendium
+analysis/results/tables/audit_refs.json
+analysis/results/tables/prose_gate_report.json
+analysis/results/tables/ref_renumber_map.csv
+analysis/results/tables/dapc_status.csv
+analysis/results/tables/stage30_summary.csv
+analysis/results/tables/ld_thinning_check.csv
+
+# manuscript-editorial and packaging tooling — working machinery, not the analysis workflow
+# (the public repo carries the analysis pipeline only)
+build_submission_package.py
+analysis/scripts/90_ref_audit.py
+analysis/scripts/91_prose_gate.py
+analysis/scripts/92_renumber_refs.py

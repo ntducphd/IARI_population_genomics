@@ -1,0 +1,3 @@
+panel,platform,snps_raw,snps_qc,snps_pruned,n_accessions
+Set1,WGS 1.01M,1011601,502675,24370,150
+Set2,50K array,50051,31565,2942,147

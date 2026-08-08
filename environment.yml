@@ -1,0 +1,39 @@
+# environment.yml — reproducible environment for this compendium (R + Python together),
+# pinned to the exact versions used.
+#
+# PROVENANCE NOTE (honest, stage-resolved): the compendium was executed on two machines.
+# Stages 01-12 (structure, diversity, concordance, core collection) ran under Python 3.13 /
+# R 4.4.3 (SNPRelate 1.x, gdsfmt, LEA, pegas, ape — see Methods); stages 13-26 (ROH, Ne, WC-Fst,
+# HWE/selfing, haplotype scans, outlier scans, SFS/demography, f-stats, bootstraps, robustness)
+# ran under the versions pinned below. No stage's conclusions depend on interpreter version;
+# per-stage tool versions are recorded in MANIFEST.md.
+#
+# Third-party tools NOT in conda, shipped/downloaded to analysis/tools/ (see MANIFEST.md):
+#   PLINK 1.9 (shared, ../manuscript_6_gwas_nue/scripts/Plink1.9/)
+#   Beagle 5.5 (beagle.17Dec24.224.jar, Java >= 8)
+#   Stairway Plot v2.1.2 (Java)
+name: paper12
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12
+  - r-base=4.5.1
+  - openjdk=17
+  - pip
+  - pip:
+      - numpy==2.4.6
+      - pandas==3.0.5
+      - scipy==1.18.0
+      - scikit-learn==1.9.0
+      - scikit-allel==1.3.13
+      - umap-learn==0.5.12
+      - matplotlib==3.11.1
+      - openpyxl==3.1.5
+      - statsmodels==0.14.6
+# R packages (installed by restore_env.sh; conda cannot pin all of these on every platform):
+#   CRAN: rehh 3.2.3, pcadapt 4.4.1, adegenet 2.1.11, pegas 1.4, ape 5.8.1, vcfR 1.16.0
+#   Bioconductor (stages 01-12 only): SNPRelate, gdsfmt, LEA
+# Dropped with documented reasons (see Methods): hierfstat, corehunter/rJava (fatal environment
+# errors); OutFLANK (Bioconductor qvalue unreachable at analysis time; pcadapt + haplotype scans
+# provide the outlier evidence instead).

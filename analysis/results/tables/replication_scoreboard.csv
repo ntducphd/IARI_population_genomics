@@ -1,0 +1,13 @@
+metric,set1,set2,family
+Observed heterozygosity (Ho),0.0233,0.0671,Diversity & mating
+Expected heterozygosity (He),0.3152,0.3145,Diversity & mating
+Inbreeding coefficient (F),0.9256,0.7866,Diversity & mating
+Selfing rate (s),0.9613871436346187,0.8805729760569028,Diversity & mating
+Genomic inbreeding (F_ROH),0.814420074070515,0.6733564330090435,Genome history
+Nei Gst (between clusters),0.3296,0.29397,Differentiation
+Weir-Cockerham theta,0.4028781954074634,0.3785591223424501,Differentiation
+Mantel r (genomic~phenomic),0.1597,0.0867,Concordance
+Classifier accuracy (imaging -> cluster),0.4520547945205479,0.2993197278911564,Concordance
+Classifier permutation null,0.1888395244559628,0.1496598639455782,Concordance
+ARI (UMAP vs admixture),0.7564,0.7588,Structure
+10% core diversity retained (/100),1.015,1.077,Application

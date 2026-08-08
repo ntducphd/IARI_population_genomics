@@ -1,0 +1,2 @@
+panel,target,n,n_groups,accuracy,cv_folds,empirical_p,null_mean
+Set1,external_3KRGP_subpop,129,5,0.5891472868217055,5,0.001,0.3409688758525968

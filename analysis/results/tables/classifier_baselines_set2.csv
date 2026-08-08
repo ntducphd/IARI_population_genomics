@@ -1,0 +1,6 @@
+panel,features,target,accuracy,cv_folds,empirical_p,null_mean,softQ_weighted_accuracy
+Set2,full_204,admixture_elbowK,0.29931972789115646,5,0.001,0.14965986394557823,0.3240600835816999
+Set2,height_only,admixture_elbowK,0.21768707482993196,5,,,
+Set2,nonsize_colour_nir,admixture_elbowK,0.32653061224489793,5,,,
+Set2,full_204,kmeans_K8,0.38095238095238093,5,,,
+Set2,full_204,kmeans_K10,0.29931972789115646,5,,,

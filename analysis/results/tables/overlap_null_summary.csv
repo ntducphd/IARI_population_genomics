@@ -1,0 +1,2 @@
+n_regions,n_overlap,observed_fraction,null_mean_fraction,null_p97_5,empirical_p,enrichment,n_singleton_regions,exact_snp_overlap,n_hap_outlier_snps,exact_overlap_fraction,pcadapt_outlier_density,exact_snp_enrichment,n_rotations
+261,177,0.6781609195402298,0.7138043991581253,0.7624974408470064,0.917,0.9500654805995394,83,87,4050,0.02148148148148148,0.05434923161088178,0.395249037470853,999

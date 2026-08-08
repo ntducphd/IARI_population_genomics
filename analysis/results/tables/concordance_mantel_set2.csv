@@ -1,0 +1,6 @@
+panel,n,comparison,r,p
+Set2,147,genomic~phenomic,0.0867,0.004
+Set2,147,genomic~trait,0.0915,0.001
+Set2,147,phenomic~trait,0.1353,0.014
+Set2,147,genomic~phenomic|trait(partial),0.0753,0.012
+Set2,147,genomic~trait|phenomic(partial),0.0809,0.002

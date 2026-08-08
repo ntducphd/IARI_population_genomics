@@ -1,0 +1,3 @@
+panel,F_used,recent_ne_panmictic,recent_ne_selfing_adj,recent_ne_panmictic_cM3,recent_ne_panmictic_cM5,assumptions
+Set1,0.9256453333333337,70.65027825617086,950.1794766009461,94.20037100822782,56.520222604936684,Sved1971; alpha=1.0; r2_adj=r2-1/n; 4.0 cM/Mb; selfing c*=c(1-F); bins>=25000bp; structure+MAF ascertainment biases stated in Methods
+Set2,0.7866282993197279,51.29118339772037,240.38418981614578,68.38824453029383,41.0329467181763,Sved1971; alpha=1.0; r2_adj=r2-1/n; 4.0 cM/Mb; selfing c*=c(1-F); bins>=25000bp; structure+MAF ascertainment biases stated in Methods
