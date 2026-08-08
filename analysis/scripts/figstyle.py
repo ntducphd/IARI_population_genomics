@@ -71,3 +71,6 @@ def save(fig, path):
     found clipping the top of several titles before this fix (Fig1/3/4/7, SuppFig1/2)."""
     fig.savefig(path, bbox_inches="tight")
     fig.savefig(path.rsplit(".", 1)[0] + ".pdf", bbox_inches="tight")
+    # SVG with real text elements (svg.fonttype = "none"): the editable-figure source for
+    # the journal figure booklets — Word can convert these to native editable shapes/text
+    fig.savefig(path.rsplit(".", 1)[0] + ".svg", bbox_inches="tight")

@@ -38,3 +38,6 @@ build_submission_package.py
 analysis/scripts/90_ref_audit.py
 analysis/scripts/91_prose_gate.py
 analysis/scripts/92_renumber_refs.py
+
+# SVG figure exports are booklet-tooling inputs, not shipped repo artifacts (repo ships PNG+PDF)
+analysis/results/figures/**/*.svg
