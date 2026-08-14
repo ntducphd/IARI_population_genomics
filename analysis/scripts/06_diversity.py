@@ -140,7 +140,7 @@ for panel in PANELS:
                               mean_Ho=round(mean_ho, 4), mean_He=round(mean_he, 4), mean_F=round(mean_f, 4),
                               genome_pi=round(genome_pi, 6), genome_theta_w=round(genome_theta, 6),
                               genome_tajima_d=round(genome_tajd, 4),
-                              Ne_LD_based="not computed (deferred, see script header)"))
+                              Ne_LD_based="not computed here (see stage 14, LD-based Ne)"))
 
 pd.DataFrame(rows_summary).to_csv(TAB / "diversity_summary.csv", index=False)
 print("\n-> tables/maf_spectrum_{set}.csv + diversity_windows_{set}.csv + diversity_summary.csv")

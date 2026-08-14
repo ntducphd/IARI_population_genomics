@@ -1,3 +1,3 @@
 panel,n,n_snps,mean_PIC,mean_Ho,mean_He,mean_F,genome_pi,genome_theta_w,genome_tajima_d,Ne_LD_based
-Set1,150,502675,0.2568,0.0233,0.3152,0.9256,0.000431,0.000217,3.1533,"not computed (deferred, see script header)"
-Set2,147,31565,0.2561,0.0671,0.3145,0.7866,3.2e-05,1.6e-05,2.7626,"not computed (deferred, see script header)"
+Set1,150,502675,0.2568,0.0233,0.3152,0.9256,0.000431,0.000217,3.1533,"not computed here (see stage 14, LD-based Ne)"
+Set2,147,31565,0.2561,0.0671,0.3145,0.7866,3.2e-05,1.6e-05,2.7626,"not computed here (see stage 14, LD-based Ne)"

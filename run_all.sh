@@ -49,7 +49,7 @@ S=analysis/scripts
 [ "$RUN_FST"    = true ] && { echo "[4] Fst (Nei Gst, Python)";                "$PY" $S/05_fst_amova.py; echo "[4b] AMOVA (pegas)"; "$RS" $S/05b_amova.R; }
 [ "$RUN_DIV"    = true ] && { echo "[5] Diversity (pi/He/Ho/PIC/F/Ne)";        "$PY" $S/06_diversity.py; }
 [ "$RUN_LD"     = true ] && { echo "[6] LD decay";                            "$PY" $S/07_ld_decay.py; }
-[ "$RUN_ANCHOR" = true ] && { echo "[7] Set1 3K-RGP subpopulation labels (authoritative, parsed)"; "$PY" $S/08a_parse_set1_subpop.py; echo "[7b] Global 3K-RGP anchor PCA (Set2 not anchored yet, see script header)"; "$RS" $S/08b_anchor_pca.R; }
+[ "$RUN_ANCHOR" = true ] && { echo "[7] Set1 3K-RGP subpopulation labels (authoritative, parsed)"; "$PY" $S/08a_parse_set1_subpop.py; echo "[7b] Global 3K-RGP anchor PCA (Set2 not anchored)"; "$RS" $S/08b_anchor_pca.R; }
 [ "$RUN_CONC"   = true ] && { echo "[8] Pillar B: genomic<->phenomic<->trait concordance (Python: Mantel/partial-Mantel/Procrustes/RF/feature-attribution/confounder)"; "$PY" $S/09_phenomic_concordance.py; }
 [ "$RUN_CORE"   = true ] && { echo "[8b] Pillar C: core/mini-core collection (Python M-strategy max-min diversity)"; "$PY" $S/09b_core_collection.py; }
 [ "$RUN_FIGS"   = true ] && { echo "[9] Figures";                              "$PY" $S/10_figures.py; }
@@ -70,9 +70,9 @@ S=analysis/scripts
 [ "$RUN_LDCHK"  = true ] && { echo "[25] LD thresholds + thinning check";     "$PY" $S/25_ld_check.py; }
 [ "$RUN_AMOVA2" = true ] && { echo "[26] Two-level AMOVA";                    "$RS" $S/26_amova2.R; }
 [ "$RUN_FIGS2"  = true ] && { echo "[28] Flagship figures";                   "$PY" $S/28_figures_flagship.py; echo "[29] Fig01 design schematic (house standard)"; "$PY" $S/29_fig01_design.py; echo "[36] Mechanism/replication source tables (Fig09/Fig10)"; "$PY" $S/36_mechanism_visuals.py; echo "[35] Composite high-density figures"; "$PY" $S/35_figures_composite.py; }
-# ---- review-response stages (2026-08-08, F1-F8 fixes) ----
+# ---- robustness and validation stages ----
 RUN_ROBUST=true
-[ "$RUN_ROBUST" = true ] && { echo "[30] Confound + label-robustness battery (LONG)"; "$PY" $S/30_confound_robustness.py; echo "[31] Demography repair (F5)"; "$PY" $S/31_demography_repair.py; echo "[32] Scan-overlap rotation null (F6)"; "$PY" $S/32_overlap_null.py; echo "[33] Reference validation + Procrustes reconciliation (F7)"; "$PY" $S/33_validate_reference.py; echo "[37] Size-leakage + classifier uncertainty (LONG)"; "$PY" $S/37_mechanism_stature_tests.py; echo "[38] Mechanism forensics: K-forensics, residualised clf, temporal Mantel, Pst-Fst, FDR ledger"; "$PY" $S/38_mechanism_forensics.py; echo "[38b] Residualised-classifier permutation null (LONG)"; "$PY" $S/38b_residualised_perm.py; }
+[ "$RUN_ROBUST" = true ] && { echo "[30] Confound + label-robustness battery (LONG)"; "$PY" $S/30_confound_robustness.py; echo "[31] Demography repair"; "$PY" $S/31_demography_repair.py; echo "[32] Scan-overlap rotation null"; "$PY" $S/32_overlap_null.py; echo "[33] Reference validation + Procrustes reconciliation"; "$PY" $S/33_validate_reference.py; echo "[37] Size-leakage + classifier uncertainty (LONG)"; "$PY" $S/37_mechanism_stature_tests.py; echo "[38] Mechanism forensics: K-forensics, residualised clf, temporal Mantel, Pst-Fst, FDR ledger"; "$PY" $S/38_mechanism_forensics.py; echo "[38b] Residualised-classifier permutation null (LONG)"; "$PY" $S/38b_residualised_perm.py; }
 
 [ "$RUN_TABLES" = true ] && { echo "[10] Tables (1-7, S1-S16)";               "$PY" $S/11_tables.py; }
 [ "$RUN_SRCDATA" = true ] && { echo "[SD] Source Data workbook";              "$PY" $S/build_source_data.py; }

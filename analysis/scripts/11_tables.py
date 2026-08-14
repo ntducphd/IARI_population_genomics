@@ -146,7 +146,7 @@ def _have(*names):
         return False
     return True
 
-# ---- Table 1 UPGRADE: no-MAF diversity (T1-1 fix) + F_ROH + selfing rate ----
+# ---- Table 1 UPGRADE: no-MAF diversity + F_ROH + selfing rate ----
 if _have("diversity_nomaf_summary.csv", "roh_summary.csv", "hwe_summary.csv"):
     nomaf = pd.read_csv(TAB / "diversity_nomaf_summary.csv")
     roh = pd.read_csv(TAB / "roh_summary.csv")[["panel", "mean_f_roh"]]
@@ -194,7 +194,7 @@ if _have("fst_wc_global_set1.csv", "fst_wc_global_set2.csv"):
                                "Among 3K-RGP subpopulations within macro-group",
                                "Within subpopulations"][:len(a2)]
             # the within-subpopulation (Error) component has no permutation test -> em dash,
-            # not a bare "nan" in the rendered table (review F8); pegas returns 0.000 when the
+            # not a bare "nan" in the rendered table; pegas returns 0.000 when the
             # observed value beat all 999 permutations -> report the resolution bound, never
             # a literal impossible P = 0
             a2["P"] = a2["P"].map(lambda v: "-" if pd.isna(v)
@@ -232,7 +232,7 @@ if _have("ld_threshold_summary.csv", "ld_thinning_check.csv"):
                                 "thinning over-estimates the Set 1 half-decay distance by ~14%."))
     print("Table 3 upgraded (thresholds + thinning check)")
 
-# ---- Table 6 (NEW): genome history — ROH + Ne INTERVAL (review F5) ----
+# ---- Table 6 (NEW): genome history — ROH + Ne INTERVAL ----
 if _have("roh_summary.csv", "ne_interval_summary.csv"):
     roh_full = pd.read_csv(TAB / "roh_summary.csv")
     ni = pd.read_csv(TAB / "ne_interval_summary.csv")

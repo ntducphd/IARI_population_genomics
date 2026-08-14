@@ -5,7 +5,7 @@ structure-aware and numerically clean.
 (a) Stairway output cleaned: re-parse the final summary, drop numeric-underflow rows
     (year < 0.1) and consecutive duplicates, rewrite tables/stairway_ne_set1.csv (SuppFig S4 is
     refit by 28_figures_flagship.py from the cleaned table).
-(b) WITHIN-CLUSTER companion statistics (the structure-controlled numbers the reviews demand):
+(b) WITHIN-CLUSTER companion statistics (structure-controlled companions to the pooled numbers):
     for the largest Set 1 admixture cluster — windowed Tajima's D on the missingness-only site
     set restricted to cluster members, and an LD-based Ne from a within-cluster r^2 curve
     (PLINK --keep, same thinning/binning as stage 07, Sved estimator as stage 14 with the

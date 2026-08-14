@@ -5,8 +5,8 @@
 (b) RECONCILE the Procrustes pipelines: the primary analysis (stage 09) used the SNPRelate
     genomic PCs (tables/pca_{set}.csv) vs the sklearn PCA of standardised imaging features,
     while the stage-24 sensitivity used a classical-MDS reconstruction of the IBS distance —
-    a different genomic configuration, which produced the M^2 clash the reviews flagged
-    (0.805/0.856 primary vs 0.864/0.888 at the same 4 PCs). This stage recomputes the
+    a different genomic configuration, producing different M^2 values at the same 4 PCs
+    (0.805/0.856 primary vs 0.864/0.888). This stage recomputes the
     sensitivity across n_pc = 2..6 with EXACTLY the stage-09 inputs, so the primary value sits
     inside its own band, and overwrites robustness_procrustes_{set}.csv.
     (pca_{set}.csv provides 6 PCs, so the band is 2-6, stated in the manuscript.)

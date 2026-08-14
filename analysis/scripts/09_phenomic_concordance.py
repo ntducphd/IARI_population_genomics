@@ -5,10 +5,9 @@ population structure? This is the primary, broad-audience result of the paper
 
 Implemented directly in Python rather than via R's vegan: Mantel/partial-Mantel and Procrustes/
 PROTEST are simple, well-defined textbook procedures (permutation tests on distance/configuration
-matrices), and this session's environment audit found this R 4.4.3 build unreliable even for much
-simpler operations (see hierfstat, adegenet findings in the environment-audit record) -- a from-scratch,
-easily-verified Python implementation is more trustworthy here than fighting vegan's exact API
-under a flaky interpreter for the single most important analysis in the paper.
+matrices), and a from-scratch, easily-verified Python implementation is more trustworthy here than
+depending on vegan's exact API for the single most important analysis in the paper. (Stage 33
+cross-validates this implementation directly against vegan::mantel.)
 
 Three distances/configurations per panel:
   genomic  = 1 - IBS (from Stage 3, 04_kinship_tree.R), restricted to phenotyped accessions

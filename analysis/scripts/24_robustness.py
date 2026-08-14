@@ -5,19 +5,19 @@ Motivation: the core inference
 leans on the Mantel family, which is the field's most criticised test (Guillot & Rousset 2013).
 This stage adds the defence lines a methods referee will ask for:
 
-  [A] Classifier nulls (T1-3): same protocol as stage 09 (random forest, 300 trees, stratified
+  [A] Classifier nulls: same protocol as stage 09 (random forest, 300 trees, stratified
       k-fold with k = largest value <= 5 giving every cluster >= k members), now reporting
       balanced accuracy, macro-F1, per-class recall, and an EMPIRICAL label-permutation null
       (N_PERM_CLF full CV repeats with shuffled cluster labels -> empirical P for the observed
       accuracy), replacing the majority-class baseline as the formal chance reference.
-  [B] MMRR (T1-4): multiple matrix regression with randomisation (Wang 2013) — phenomic distance
+  [B] MMRR: multiple matrix regression with randomisation (Wang 2013) — phenomic distance
       ~ genomic distance + trait distance, coefficients tested by row/column permutation of the
       response matrix. A regression-on-distance-matrices alternative to (partial) Mantel.
-  [C] Procrustes PC-count sensitivity (T1-6): M^2 and PROTEST P for n_pc = 2..8 (stage 09 fixed
+  [C] Procrustes PC-count sensitivity: M^2 and PROTEST P for n_pc = 2..8 (stage 09 fixed
       n_pc = 4).
-  [D] Elbow-K sensitivity (T1-8): ARI between PCA k-means at K-1/K/K+1 and the admixture argmax
+  [D] Elbow-K sensitivity: ARI between PCA k-means at K-1/K/K+1 and the admixture argmax
       assignment (elbow K fixed) — does the cross-method consensus survive +/-1 in K?
-  [E] FDR ledger (T1-4): every Mantel-family P reported in the paper, Benjamini-Hochberg adjusted
+  [E] FDR ledger: every Mantel-family P reported in the paper, Benjamini-Hochberg adjusted
       in one table.
 
 Outputs (analysis/results/tables/): robustness_classifier_{set}.csv,

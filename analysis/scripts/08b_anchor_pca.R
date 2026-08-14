@@ -69,4 +69,4 @@ for (i in seq_len(nrow(agg)))
 
 cat("\n-> tables/anchor_pca_global.csv + anchor_pca_variance.csv\n")
 cat("NOTE: Set2 (50K array) NOT anchored -- no pre-merged 3K-RGP+Set2 genotype file found on disk;\n")
-cat("      only a common-SNP-position list exists. Documented as a limitation, not fabricated.\n")
+cat("      only a common-SNP-position list exists. Documented as a limitation.\n")

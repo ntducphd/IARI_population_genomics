@@ -1,18 +1,14 @@
 #!/usr/bin/env python
-"""10_figures.py — the stage-10 figures that survive in the FINAL 8-figure high-density scheme
-(2026-08-08). PNG for review + vector PDF for the journal (figstyle.save).
+"""10_figures.py — the stage-10 figures in the final high-density figure scheme.
+PNG for review + vector PDF for the journal (figstyle.save).
 
 Fig 3   NJ tree + GRM kinship heatmap, both panels (tips coloured by admixture cluster)
 Supp S1 UMAP embedding + structure-consensus (ARI/NMI) heatmap
 Supp S2 3K-RGP global anchor PCA (Set1 only; Set2 gap noted)
 
-History: this stage originally built 7 single-topic mains (design, PCA, admixture, tree/kinship,
-Fst+diversity, LD, concordance) + 3 supp. In the consolidation, PCA/admixture content moved into
-Fig02_structure, Fst/diversity/LD into Fig04_diff_diversity_ld, concordance into
-Fig05_concordance_mechanism, the core-collection curve into Fig08_application (all
-35_figures_composite.py), and the design schematic is owned by 29_fig01_design.py. The superseded
-superseded _archive_* renders were deleted outright
-(superseded renders are deleted, not parked; see git history if an old render is ever needed).
+The remaining floats in the final scheme (structure, differentiation/diversity/LD, concordance,
+core-collection application) render as composites in 35_figures_composite.py; the design schematic
+is built by 29_fig01_design.py.
 """
 import re
 import sys

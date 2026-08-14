@@ -2,7 +2,7 @@
 """30_confound_robustness.py — [stage 30] confound and label-robustness batteries for the concordance analysis
 explicit confound tests and label-robustness for the Pillar B claim.
 
-[F1] Size/stature confounding:
+Size/stature confounding:
   * D_height  = distance on the height features only (HeightSV/HeightTV/iPH x 3 timepoints)
   * D_size    = distance on the full size/morphology family (111 features)
   * D_nonsize = distance on colour + NIR features only (93 features)
@@ -10,12 +10,12 @@ explicit confound tests and label-robustness for the Pillar B claim.
   * Mantel r(Dg, D_height) and r(Dg, D_nonsize | D_size) — how far does height alone go, and is
     there residual non-size signal?
   * Height-only classifier baseline vs full-204 (same CV protocol) — the deflationary test.
-[F1-spatial] PlantID is a numeric pot/sequence identifier; |ΔPlantID| is used as a greenhouse-
-  position PROXY: Mantel r(Dg, D_pos), r(Dp, D_pos), and partial r(Dg, Dp | D_pos). (An honest
-  proxy, stated as such; true coordinates were not recorded in the data lake.)
-[F3] Bootstrap 95% CIs (500 resamples over accessions) for the primary Mantel r, both panels;
+  * Spatial proxy: PlantID is a numeric pot/sequence identifier; |ΔPlantID| is used as a greenhouse-
+    position PROXY: Mantel r(Dg, D_pos), r(Dp, D_pos), and partial r(Dg, Dp | D_pos). (An honest
+    proxy, stated as such; true coordinates were not recorded in the data lake.)
+Bootstrap 95% CIs (500 resamples over accessions) for the primary Mantel r, both panels;
   primary classifier empirical P upgraded to 999 permutations.
-[F4] Label-robustness for the classifier: (a) EXTERNAL 3K-RGP subpopulation labels as target
+Label-robustness for the classifier: (a) EXTERNAL 3K-RGP subpopulation labels as target
   (Set 1, groups n >= 5) — breaks the circularity objection; (b) k-means labels at K-1/K/K+1;
   (c) soft-Q-weighted accuracy (weight = accession's max admixture proportion).
 

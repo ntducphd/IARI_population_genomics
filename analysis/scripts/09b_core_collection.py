@@ -2,10 +2,8 @@
 """09b_core_collection.py — Stage 9, Pillar C breeding resource: a core/mini-core collection that
 maximises genetic diversity coverage, plus a list of underused (diverse-tail) accessions.
 
-Why Python, not corehunter (R)? corehunter installs cleanly from CRAN but its rJava backend
-crashes R deterministically (`rJava::.jinit()` reproducibly reproduced an access violation on this
-machine, retested -- see the environment-audit record §3). Per the agreed fallback, this
-implements the classic **M (maximisation) strategy** directly: greedy max-min diversity / farthest-
+Why Python, not corehunter (R)? corehunter's rJava backend is a dependency this compendium avoids
+entirely. This implements the classic **M (maximisation) strategy** directly: greedy max-min diversity / farthest-
 point sampling on the genomic distance matrix (Schoen & Brown 1993; Franco et al. 2005; this is the
 same family of algorithm corehunter itself implements under its "EN"/max-diversity objectives, just
 without the Java dependency):

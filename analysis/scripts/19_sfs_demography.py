@@ -9,7 +9,7 @@ not a footnote).
 
 Method decisions (each stated in Methods):
   * Input = the missingness-only-filtered Set 1 genotypes (stage 23) — an SFS computed after a
-    MAF filter would be missing its low-frequency classes entirely (same artifact as T1-1).
+    MAF filter would be missing its low-frequency classes entirely.
   * HAPLOIDISATION: with near-complete selfing (F ~ 0.93, stage 16) the two alleles of one
     accession are pseudo-replicates; standard practice for inbred-line panels is one allele per
     accession per site (random draw, seed 42) -> n = 150 haploid samples.

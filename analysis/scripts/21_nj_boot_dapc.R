@@ -1,12 +1,11 @@
 #!/usr/bin/env Rscript
 # 21_nj_boot_dapc.R -- [stage 21] (a) bootstrap support for the neighbour-joining trees;
-# (b) DAPC retry as the fourth structure-inference method.
+# (b) DAPC as the fourth structure-inference method.
 #
-# Motivation: (NJ trees shipped without support values -> no interior-branch
-# claim is currently defensible) and T2-8 (the earlier adegenet/DAPC "deterministic crash" has the
-# signature of the documented Git-Bash/MSYS2 SVD segfault on this Windows setup, not an adegenet
-# bug -- this script re-attempts it under PowerShell; on success DAPC joins the cross-method
-# consensus, on failure the documented drop stands with the retry recorded).
+# Motivation: NJ trees shipped without support values carry no defensible interior-branch claim.
+# DAPC (adegenet) is run here under PowerShell/Rscript, since SVD-family calls in adegenet's DAPC
+# routine segfault under Git-Bash/MSYS2 Rscript on Windows; on success DAPC joins the cross-method
+# consensus.
 #
 # (a) NJ bootstrap: 100 SNP-resampling replicates on the LD-pruned dosage matrix; per replicate,
 #     Euclidean-dosage distance -> ape::nj; support = ape::prop.clades on the original tree.

@@ -1,9 +1,7 @@
 # 04_kinship_tree.R — IBS distance + GRM kinship (SNPRelate) on the LD-pruned genotypes.
-# Loads ONLY SNPRelate + gdsfmt (see the environment-audit record environment audit: this R 4.4.3
-# build crashes when 3+ compiled-code packages are loaded in one session, even though every PAIR
-# tested loads fine -- SNPRelate+gdsfmt+ape crashed, each pair alone did not). The NJ tree itself is
-# therefore built in a SEPARATE script, 04b_nj_tree.R, which loads only `ape` and reads the distance
-# matrix this script writes -- no joint SNPRelate+ape session anywhere in the pipeline.
+# Loads ONLY SNPRelate + gdsfmt, so this script never needs to hold 3+ compiled-code packages in
+# one R session. The NJ tree itself is therefore built in a SEPARATE script, 04b_nj_tree.R, which
+# loads only `ape` and reads the distance matrix this script writes.
 #
 # Outputs (analysis/results/tables/ + data/interim/):
 #   kinship_{set}.csv        — full n x n GRM (GCTA method), long format (sample_a, sample_b, kinship)
