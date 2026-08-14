@@ -19,7 +19,7 @@ COMPENDIUM_ROOT <- Sys.getenv("COMPENDIUM_ROOT", unset = normalizePath(getwd(), 
 source(file.path(COMPENDIUM_ROOT, "analysis/scripts/_paths.R"))
 suppressMessages({library(SNPRelate); library(gdsfmt)})
 
-REF_STEM   <- file.path(WORKSPACE, "data/raw/genotype/Subset1_150Geno_1M/Genotypes/pruned_v2.1")
+REF_STEM   <- RGP_MERGED_1M
 THIN_STEM  <- file.path(INTERIM, "lea", "anchor_global_thin")
 GDS_PATH   <- file.path(INTERIM, "anchor_global.gds")
 

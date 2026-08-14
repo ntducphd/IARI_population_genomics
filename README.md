@@ -59,21 +59,27 @@ analysis/
 
 ## Reproducibility
 
+**What's included vs. what isn't.** Every derived result table and figure file produced by this
+pipeline is committed here (and archived as the versioned data asset of release v1.0.0), so the
+full result set can be inspected without running anything. The raw genotype/phenotype inputs and
+the PLINK 1.9 binary that `run_all.sh` needs to *regenerate* those results from scratch are
+restricted/institutional sources, not distributed in this repository — see the paper's Data
+Availability statement, and `analysis/data/external/README.md` for exactly which files/env vars
+each stage expects. Running `run_all.sh` without them will stop with a clear
+`[external data missing]` error naming the missing input, rather than a bare crash.
+
 ```bash
 bash restore_env.sh      # once: rebuild the pinned environment
-bash run_all.sh          # regenerate every figure/table from the inputs
+bash run_all.sh          # regenerate every figure/table (needs the external data above)
 ```
 
-- `MANIFEST.md` maps every float to its producing script and inputs; the inventory audit
-  (`analysis/scripts/12_audit.py`) checks the full expected figure/table inventory and
-  exits non-zero on failure.
+- `MANIFEST.md` maps every float to its producing script and inputs, and lists the external-data
+  dependencies explicitly.
+- The inventory audit (`analysis/scripts/12_audit.py`) checks the full expected figure/table
+  inventory and exits non-zero on failure.
 - External tools (PLINK 1.9, Beagle 5.5, Stairway Plot 2, Java 17) are resolved through
   `analysis/scripts/paths.py` / `_paths.R`; R package requirements are listed in
   `environment.yml`.
-- Genotype/phenotype INPUT data are not distributed in this repository. The derived
-  result tables and figure files are included here (and archived as the versioned data
-  asset of release v1.0.0); raw genotype data availability is described in the paper's
-  Availability statement.
 
 ## Citation and license
 

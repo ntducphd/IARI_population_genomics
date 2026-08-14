@@ -27,12 +27,9 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from paths import TAB, INTERIM, WORKSPACE, RSCRIPT
+from paths import TAB, INTERIM, RSCRIPT, COHORT_SET1, COHORT_SET2
 
-COHORT = {
-    "Set1": WORKSPACE / "manuscript_7_phenomic_selection/analysis/data/input/cohort_set1.csv",
-    "Set2": WORKSPACE / "manuscript_7_phenomic_selection/analysis/data/input/cohort_set2.csv",
-}
+COHORT = {"Set1": COHORT_SET1, "Set2": COHORT_SET2}
 RNG = np.random.default_rng(42)
 
 

@@ -2,7 +2,7 @@
 """12_audit.py — QC gate for this compendium. Checks that every figure/table the MANIFEST
 promises actually exists (PNG+PDF pairs for figures), and runs basic sanity checks on the key
 numbers (p-values in [0,1], correlations in [-1,1], no unexpected NaNs in headline results).
-Exits 1 if any FAIL is found (mirrors the house convention, e.g. manuscript_6's check_consistency.py).
+Exits 1 if any FAIL is found.
 """
 import sys
 from pathlib import Path

@@ -29,9 +29,8 @@ args      <- commandArgs(trailingOnly = FALSE)
 this_file <- sub("^--file=", "", args[grep("^--file=", args)])
 SCRIPTS   <- dirname(normalizePath(this_file))
 ROOT      <- normalizePath(file.path(SCRIPTS, "..", ".."))
-INTERIM   <- file.path(ROOT, "analysis", "data", "interim")
-TAB       <- file.path(ROOT, "analysis", "results", "tables")
-PLINK     <- file.path(dirname(ROOT), "manuscript_6_gwas_nue", "scripts", "Plink1.9", "plink.exe")
+Sys.setenv(COMPENDIUM_ROOT = ROOT)
+source(file.path(SCRIPTS, "_paths.R"))
 
 ELBOW_K <- c(Set1 = 7L, Set2 = 9L)
 N_BOOT  <- 100L

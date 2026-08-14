@@ -1,7 +1,12 @@
 # Public repo scope: analysis code + figures +
 # result tables ONLY. No raw/interim data, no manuscript, no submission/deposit material.
 # regenerable intermediates (1.7 GB PLINK/GDS/VCF/LEA projects, phased VCFs, Stairway workdir)
-analysis/data/
+analysis/data/*
+# ...except the external-data documentation itself, which explains the gap above (git can't
+# re-include a file whose parent directory is excluded, so the directory needs unignoring too)
+!analysis/data/external/
+analysis/data/external/*
+!analysis/data/external/README.md
 # private working material never ships
 .review/
 internal/

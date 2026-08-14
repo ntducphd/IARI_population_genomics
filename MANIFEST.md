@@ -51,10 +51,17 @@ Outputs land in `analysis/data/interim/` (PLINK/GDS) and `analysis/results/{figu
 | Table 1 · panel/diversity summary | `11_tables.py` ← `06` | `tables/diversity_*.csv` | `tables/Table_1_diversity.{md,csv}` |
 | Table 2 · F_ST / AMOVA | `11_tables.py` ← `05` | `tables/fst_*.csv`, `amova_*.csv` | `tables/Table_2_fst_amova.{md,csv}` |
 
-## Cross-paper dependencies (fixed relative paths; read-only)
-- `01_prep_genotypes.py` ← `../data/raw/genotype/{Subset1_150Geno_1M/Genotypes/150genotypes.*, Subset2_147Geno/Genotypes/147SNPgenoypes.hmp.csv}`, `../manuscript_6_gwas_nue/scripts/Plink1.9/plink.exe`
-- `08b_anchor_pca.R` ← `../data/raw/genotype/Subset1_150Geno_5.2M/Wanget al.2018/3K-HDRA-snp-comm-miss5pc.txt` (+ 3K-RGP reference genotypes)
-- `09_phenomic_concordance.py` ← `../manuscript_7_phenomic_selection/analysis/data/input/cohort_set{1,2}.csv` (204 phenomic features + traditional traits, ID-aligned)
+## External data dependencies
+
+Restricted/institutional sources, NOT distributed in this compendium — see the manuscript's Data
+Availability statement. Resolved via `analysis/scripts/paths.py`/`_paths.R`; override with the
+env vars named below, or see `analysis/data/external/README.md`.
+
+- `01_prep_genotypes.py` ← raw genotype calls (`RAW_GENOTYPE_DIR`: `Subset1_150Geno_1M/Genotypes/150genotypes.*`, `Subset2_147Geno/Genotypes/147SNPgenoypes.hmp.csv`), PLINK 1.9 binary (`PLINK_BIN`)
+- `08b_anchor_pca.R` ← raw genotype calls (`RAW_GENOTYPE_DIR`: `Subset1_150Geno_5.2M/Wanget al.2018/3K-HDRA-snp-comm-miss5pc.txt` + 3K-RGP reference genotypes)
+- `09_phenomic_concordance.py` ← the companion phenomic cohort files (`PHENOMIC_COHORT_DIR`:
+  `cohort_set{1,2}.csv`, 204 phenomic features + traditional traits, ID-aligned) published in the
+  companion phenomic-selection compendium (see the manuscript for the citation)
 
 ## Flagship-upgrade stages (13-26, added 2026-08-08)
 

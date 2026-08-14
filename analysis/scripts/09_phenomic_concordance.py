@@ -44,18 +44,16 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import StratifiedKFold, cross_val_predict
 from sklearn.metrics import accuracy_score
+from sklearn.pipeline import make_pipeline
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from paths import TAB, WORKSPACE
+from paths import TAB, COHORT_SET1, COHORT_SET2
 
 SEED = 42
 N_PERM = 999
 rng = np.random.default_rng(SEED)
 
-COHORT = {
-    "Set1": WORKSPACE / "manuscript_7_phenomic_selection/analysis/data/input/cohort_set1.csv",
-    "Set2": WORKSPACE / "manuscript_7_phenomic_selection/analysis/data/input/cohort_set2.csv",
-}
+COHORT = {"Set1": COHORT_SET1, "Set2": COHORT_SET2}
 NUE_TRAITS = ["NUEb", "NUpE", "NUtE", "PNUE", "NHI", "NUE1963"]
 
 
@@ -223,13 +221,18 @@ for panel in ["Set1", "Set2"]:
     qcols = [c for c in q.columns if c.startswith("Q")]
     y = q[qcols].to_numpy().argmax(axis=1)
     valid = ~np.isnan(q[qcols].to_numpy()).any(axis=1)
-    Xc, yc = Ximg_std[valid], y[valid]
+    # Unscaled here deliberately: Ximg_std was standardised on the FULL cohort (fine for the
+    # Mantel/PCA uses above, which aren't fold-based), but reusing it for cross-validated
+    # classification would leak each held-out fold's rows into the scaler fit. The pipeline
+    # below refits StandardScaler on the training fold only, inside cross_val_predict.
+    Xc, yc = Ximg[valid], y[valid]
 
     class_counts = pd.Series(yc).value_counts()
     n_splits = min(5, class_counts.min()) if class_counts.min() >= 2 else 2
     if n_splits >= 2 and len(np.unique(yc)) >= 2:
         skf = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=SEED)
-        clf = RandomForestClassifier(n_estimators=300, random_state=SEED, n_jobs=-1)
+        clf = make_pipeline(StandardScaler(),
+                             RandomForestClassifier(n_estimators=300, random_state=SEED, n_jobs=-1))
         y_pred = cross_val_predict(clf, Xc, yc, cv=skf)
         acc = accuracy_score(yc, y_pred)
         majority = class_counts.max() / class_counts.sum()

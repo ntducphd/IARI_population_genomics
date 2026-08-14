@@ -3,10 +3,10 @@
 # Self-locating: works no matter where the compendium is moved (rename/move-proof).
 # Import in any pipeline script:  from paths import *
 from pathlib import Path
+import os
 import sys
 
 ROOT      = Path(__file__).resolve().parents[2]          # manuscript_12_population_genomics/
-WORKSPACE = ROOT.parent                                   # the parent workspace folder
 SCRIPTS   = ROOT / "analysis/scripts"
 
 # ---- compendium data/results ----
@@ -21,9 +21,6 @@ for _d in (INPUT, INTERIM, FIG_MAIN, FIG_SUPP, TAB, STAB): _d.mkdir(parents=True
 # ---- tools (verified 2026-08-03; `where` returns not-found -> use full paths) ----
 # 2026-08-08: the compendium runs on more than one machine (different R versions / user profiles),
 # so RSCRIPT falls back from the documented 4.4.3 path to whatever Rscript is installed/on PATH.
-PLINK   = WORKSPACE / "manuscript_6_gwas_nue/scripts/Plink1.9/plink.exe"
-
-
 def _find_rscript():
     import shutil
     cands = [Path("C:/Program Files/R/R-4.4.3/bin/Rscript.exe")]
@@ -38,20 +35,53 @@ def _find_rscript():
 
 
 RSCRIPT = _find_rscript()
-PYTHON  = Path(sys.executable) if sys.executable else WORKSPACE / ".venv/Scripts/python.exe"
+PYTHON  = Path(sys.executable) if sys.executable else None
 
-# ---- raw genotype sources (read-only, in the shared data lake) ----
-GENO = WORKSPACE / "data/raw/genotype"
+# ---- external data (NOT distributed in this public compendium) ----
+# The raw genotype calls, the PLINK 1.9 binary, and the companion phenomic cohort files this
+# pipeline consumes come from restricted/institutional sources outside this repository -- see
+# the manuscript's Data Availability statement for access. Point EXTERNAL_DATA_ROOT at wherever
+# you keep your own copies (or set the finer-grained env vars below); by default everything
+# resolves under analysis/data/external/, which this repository intentionally ships empty aside
+# from analysis/data/external/README.md (which documents the expected layout).
+EXTERNAL = Path(os.environ.get("EXTERNAL_DATA_ROOT", ROOT / "analysis/data/external"))
+
+
+def _external(env_var, default_rel):
+    return Path(os.environ[env_var]) if env_var in os.environ else EXTERNAL / default_rel
+
+
+def require(path, what):
+    """Fail with an actionable message instead of a bare FileNotFoundError deep inside a
+    pipeline stage, when a required external/restricted-access input is missing."""
+    path = Path(path)
+    if not path.exists():
+        raise FileNotFoundError(
+            f"[external data missing] {what}\n"
+            f"  expected at: {path}\n"
+            f"  This input is not distributed in this public compendium (restricted/"
+            f"institutional source -- see the manuscript's Data Availability statement). "
+            f"If you have your own copy, place it at that path, or point the matching "
+            f"environment variable at it (see analysis/data/external/README.md)."
+        )
+    return path
+
+
+PLINK         = _external("PLINK_BIN", "plink.exe")
+GENO          = _external("RAW_GENOTYPE_DIR", "raw_genotype")
 SET1_BED_1M   = GENO / "Subset1_150Geno_1M/Genotypes/150genotypes"          # 150 acc x 1.01M SNP (PLINK bfile stem)
 SET1_BED_5M   = GENO / "Subset1_150Geno_5.2M/Genotypes/VTrice"              # 150 acc x 5.23M (dense; fine-scale)
 SET2_HMP      = GENO / "Subset2_147Geno/Genotypes/147SNPgenoypes.hmp.csv"   # 147 acc x ~50K (HapMap)
 RGP_SNPLIST   = GENO / "Subset1_150Geno_5.2M/Wanget al.2018/3K-HDRA-snp-comm-miss5pc.txt"  # HDRA common-SNP positions
 RGP_MERGED_1M = GENO / "Subset1_150Geno_1M/Genotypes/pruned_v2.1"           # 3024 acc x 1.01M (3K-RGP + Set1 merged ref)
 
-# ---- cross-paper phenotype/phenomic (Pillar B) — cohort files already ID-aligned per panel ----
-P7 = WORKSPACE / "manuscript_7_phenomic_selection/analysis/data/input"
-COHORT_SET1 = P7 / "cohort_set1.csv"     # Set1: genotype IDs + traditional traits + 204 phenomic features
-COHORT_SET2 = P7 / "cohort_set2.csv"     # Set2: idem
+# ---- cross-paper phenomic (Pillar B) — cohort files already ID-aligned per panel ----
+# The companion phenomic dataset is public in ITS OWN compendium (IARI_phenomic_selection,
+# see the manuscript for the citation) -- point PHENOMIC_COHORT_DIR at a local clone of that
+# repo's analysis/data/input/ if you have one; it is not vendored into this repository.
+_COHORT_DIR = _external("PHENOMIC_COHORT_DIR", "phenomic_cohort")
+COHORT_SET1 = _COHORT_DIR / "cohort_set1.csv"     # Set1: genotype IDs + traditional traits + 204 phenomic features
+COHORT_SET2 = _COHORT_DIR / "cohort_set2.csv"     # Set2: idem
 
 PANELS = {
     "Set1": {"geno": SET1_BED_1M, "kind": "bfile", "cohort": COHORT_SET1, "platform": "WGS (1.01M)"},

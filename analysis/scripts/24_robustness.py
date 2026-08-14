@@ -40,12 +40,9 @@ from sklearn.model_selection import StratifiedKFold, cross_val_predict
 from sklearn.preprocessing import StandardScaler
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from paths import TAB, WORKSPACE
+from paths import TAB, COHORT_SET1, COHORT_SET2
 
-COHORT = {
-    "Set1": WORKSPACE / "manuscript_7_phenomic_selection/analysis/data/input/cohort_set1.csv",
-    "Set2": WORKSPACE / "manuscript_7_phenomic_selection/analysis/data/input/cohort_set2.csv",
-}
+COHORT = {"Set1": COHORT_SET1, "Set2": COHORT_SET2}
 ELBOW_K = {"Set1": 7, "Set2": 9}
 N_PERM_CLF = 100
 N_PERM_MMRR = 999

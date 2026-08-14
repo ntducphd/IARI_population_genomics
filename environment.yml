@@ -8,11 +8,12 @@
 # ran under the versions pinned below. No stage's conclusions depend on interpreter version;
 # per-stage tool versions are recorded in MANIFEST.md.
 #
-# Third-party tools NOT in conda, shipped/downloaded to analysis/tools/ (see MANIFEST.md):
-#   PLINK 1.9 (shared, ../manuscript_6_gwas_nue/scripts/Plink1.9/)
-#   Beagle 5.5 (beagle.17Dec24.224.jar, Java >= 8)
-#   Stairway Plot v2.1.2 (Java)
-name: paper12
+# Third-party tools NOT in conda:
+#   PLINK 1.9 — external, restricted-access install; see analysis/data/external/README.md
+#     (PLINK_BIN env var, or analysis/data/external/plink.exe)
+#   Beagle 5.5 (beagle.17Dec24.224.jar, Java >= 8) — shipped/downloaded to analysis/tools/, see MANIFEST.md
+#   Stairway Plot v2.1.2 (Java) — shipped/downloaded to analysis/tools/, see MANIFEST.md
+name: population-genomics-compendium
 channels:
   - conda-forge
   - bioconda
